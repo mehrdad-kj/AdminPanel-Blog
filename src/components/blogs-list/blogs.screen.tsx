@@ -1,8 +1,13 @@
+import CardComponent from "../../features/card/card";
+import { useGetPostsListQuery } from "../../utils/slices/postsSlice";
 
 const Blogs = () => {
+
+  const {data: postsList} = useGetPostsListQuery()
+
   return (
     <>
-      <div>Blogs</div>
+      <CardComponent />
     </>
   );
 };

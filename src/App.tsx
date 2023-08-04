@@ -3,6 +3,8 @@ import RootLayout from "./layout/root-layout";
 import ErrorPage from "./layout/notfound";
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
+import Blogs from "./components/blogs-list/blogs.screen";
+import Blog from "./components/blog/blog.component";
 
 function App() {
   const router = createBrowserRouter([
@@ -10,6 +12,17 @@ function App() {
       path: "/",
       element: <RootLayout />,
       errorElement: <ErrorPage />,
+      children: [
+        { 
+          path: "/blogs?", 
+          element: <Blogs /> 
+        },
+        { 
+          path: "/blogs/:blogId", 
+          element: <Blog /> 
+        },
+    
+    ],
     },
   ]);
 
@@ -19,7 +32,6 @@ function App() {
       fontFamily: "IRANYekanX",
     },
   });
-
 
   return (
     <>
