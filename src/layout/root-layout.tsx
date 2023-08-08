@@ -1,9 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
+import { COLOR_PALETTE } from "./colorPallete";
 
 const RootLayout = () => {
   return (
     <>
-      <div className="bg-[#e6f3ff] w-full h-full">
+      <div className={`${COLOR_PALETTE.PRIMARY} w-full h-full`}>
         <nav>
           <ul>
             <li>
