@@ -7,7 +7,7 @@ const Blogs = () => {
   console.log("data", data);
 
   return (
-      <section className="flex flex-wrap justify-around p-4 ">
+      <section className="flex flex-wrap justify-around p-4 bg-slate-100">
         {data?.map((post) => (
           <CardComponent post={post} key={post.id}/>
         ))}
