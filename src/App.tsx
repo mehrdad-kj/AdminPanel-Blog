@@ -5,6 +5,7 @@ import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import Blogs from "./components/blogs-list/blogs.screen";
 import Blog from "./components/blog/blog.component";
+import LogInComponent from "./components/login/login.component";
 
 function App() {
   const router = createBrowserRouter([
@@ -13,16 +14,19 @@ function App() {
       element: <RootLayout />,
       errorElement: <ErrorPage />,
       children: [
-        { 
-          path: "/blogs?", 
-          element: <Blogs /> 
+        {
+          path: "/blogs?",
+          element: <Blogs />,
         },
-        { 
-          path: "/blogs/:blogId", 
-          element: <Blog /> 
+        {
+          path: "/blogs/:blogId",
+          element: <Blog />,
         },
-    
-    ],
+      ],
+    },
+    {
+      path: "/login",
+      element: <LogInComponent />,
     },
   ]);
 
