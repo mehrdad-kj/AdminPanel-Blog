@@ -7,7 +7,6 @@ export interface Response {
   body: string;
 }
 
-
 export const postsApi = createApi({
   reducerPath: "postsApi",
   baseQuery: fetchBaseQuery({
@@ -17,8 +16,12 @@ export const postsApi = createApi({
     getPostsList: builder.query<Response[], void>({
       query: () => `/posts`,
     }),
+    getPostById: builder.query<Response, { id: number | string }>({
+      query: ({ id }) => ({
+        url: `/posts/${id}`,
+      }),
+    }),
   }),
 });
 
-
-export const { useGetPostsListQuery } = postsApi;
+export const { useGetPostsListQuery, useGetPostByIdQuery } = postsApi;

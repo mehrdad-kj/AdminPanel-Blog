@@ -4,8 +4,6 @@ import { useGetPostsListQuery } from "../../utils/slices/postsSlice";
 const Blogs = () => {
   const { data } = useGetPostsListQuery();
 
-  console.log("data", data);
-
   return (
       <section className="flex flex-wrap justify-around p-4 bg-slate-100">
         {data?.map((post) => (
