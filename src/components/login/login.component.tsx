@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
+import InputComponent from "../../features/input/input.component";
 
 const LogInComponent = () => {
-  const { register, handleSubmit } = useForm();
+  const { control, handleSubmit } = useForm();
 
   const onSubmit = handleSubmit((formData) => {
     console.log("formData", formData);
@@ -9,11 +10,12 @@ const LogInComponent = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <label>نام کاربری</label>
-      <input type="text" {...register("username")} />
-      <label>رمز عبور</label>
-      <input type="password" {...register("password")} />
-      <button>ورود</button>
+      <InputComponent
+        control={control}
+        label="نام کاربری"
+        name="username"
+        type="text"
+      />
     </form>
   );
 };
