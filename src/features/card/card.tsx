@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { currentDate } from "../../utils/objects/currentDate";
-import { Response } from "../../utils/slices/postsSlice";
+import { Post } from "../../utils/slices/postsSlice";
 
 interface CardProps {
-  post: Response;
+  post: Post;
 }
 
 const CardComponent: React.FC<CardProps> = ({ post }) => {

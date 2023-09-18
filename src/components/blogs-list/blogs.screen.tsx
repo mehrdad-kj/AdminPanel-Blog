@@ -1,15 +1,24 @@
+import { CircularProgress } from "@mui/material";
 import CardComponent from "../../features/card/card";
-import { useGetPostsListQuery } from "../../utils/slices/postsSlice";
+import { Post, useGetPostsListQuery } from "../../utils/slices/postsSlice";
 
 const Blogs = () => {
-  const { data } = useGetPostsListQuery();
+  const { data, isLoading } = useGetPostsListQuery();
+
+  console.log(data)
 
   return (
-      <section className="flex flex-wrap justify-around p-4 bg-slate-100">
-        {data?.map((post) => (
-          <CardComponent post={post} key={post.id}/>
-        ))}
-      </section>
+    <>
+      {isLoading ? (
+        <CircularProgress />
+      ) : (
+        <section className="flex flex-wrap justify-around p-4 bg-slate-100">
+          {data?.posts.map((post: Post) => (
+            <CardComponent post={post} key={post.id} />
+          ))}
+        </section>
+      )}
+    </>
   );
 };
 
