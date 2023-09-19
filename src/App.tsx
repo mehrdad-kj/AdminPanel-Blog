@@ -1,11 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import RootLayout from "./layout/root-layout";
-import ErrorPage from "./layout/notfound";
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import Blogs from "./components/blogs-list/blogs.screen";
 import Blog from "./components/blog/blog.component";
 import LogInComponent from "./components/login/login.component";
+import ErrorPage from "./layout/notfound.component";
+import RootLayout from "./layout/root-layout.component";
 
 function App() {
   const router = createBrowserRouter([
