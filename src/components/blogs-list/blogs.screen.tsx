@@ -30,7 +30,9 @@ const Blogs = () => {
       ) : (
         <section className="flex flex-wrap justify-around p-4 bg-slate-100">
           {[...Array(21).keys()].map((e) => (
-            <SkeletonElement key={e} />
+            <>
+              <SkeletonElement key={e} />
+            </>
           ))}
         </section>
       )}
